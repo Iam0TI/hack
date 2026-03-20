@@ -15,4 +15,10 @@ CHIP Mux4Way16 {
     
     PARTS:
     //// Replace this comment with your code.
+    // (tree walk up)
+    Mux16(a=a, b=b, sel=sel[0], out=left);
+    Mux16(a=c, b=d, sel=sel[0], out=right);
+    Mux16(a=left, b=right, sel=sel[1], out=out);
+    // Mux16(a=right, b=d, sel=sel[0], out=out);
+    
 }
